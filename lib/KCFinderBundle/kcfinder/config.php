@@ -22,11 +22,11 @@ $_CONFIG = array(
     'denyZipDownload' => false,
     'denyUpdateCheck' => false,
     'denyExtensionRename' => false,
-
+    'language' => 'fr',
     'theme' => "oxygen",
 
     'uploadURL' => "http://{$_SERVER['HTTP_HOST']}/upload", // Should point to /web/upload
-    'uploadDir' => __DIR__ . '/../../../../web/upload',
+    'uploadDir' => __DIR__ . '/../../../../../../web/upload',
 
     'dirPerms' => 0775,
     'filePerms' => 0664,
