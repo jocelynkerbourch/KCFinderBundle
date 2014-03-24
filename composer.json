@@ -15,7 +15,7 @@
         "issues": "https://github.com/jocelynkerbourch/KCFinderBundle"
     },
     "autoload": {
-        "psr-0": { "lib\\KCFinderBundle": "/" }
+        "psr-0": { "lib\\KCFinderBundle": "" }
     },
     "minimum-stability": "dev",
     "require": {
