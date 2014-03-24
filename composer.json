@@ -1,0 +1,24 @@
+{
+    "name": " jocelynkerbourch/KCFinderBundle",
+    "type": "library",
+    "licence": "MIT",
+    "description": "KCFinder is free open-source alternative to the CKFinder web file manager",
+    "keywords": ["KCFinder", "CKFinder", "file", "manager"],
+    "authors": [
+        {
+            "name": "Jocelyn Kerbourc'h",
+            "email": "jocelyn.kerbourch@gmail.com"
+        }
+    ],
+    "support": {
+        "email": "jocelyn.kerbourch@gmail.com",
+        "issues": "https://github.com/jocelynkerbourch/KCFinderBundle"
+    },
+    "autoload": {
+        "psr-0": { "lib\\KCFinderBundle": "/" }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.4"
+    }
+}
