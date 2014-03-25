@@ -3,12 +3,24 @@ KCFinder for symfony2 (unofficial)
 http://kcfinder.sunhater.com
 
 Install :
-0 - composer
+composer
+"jocelynkerbourch/kc-finder-bundle": "dev-master"
+php composer.phar install 
 
-1 - appkernel
+appkernel
+new lib\KCFinderBundle\libKCFinderBundle(),
 
-2 - routing
+routing
+lib_kcfinder: 
+    resource: "@libKCFinderBundle/Resources/config/routing.yml" 
+    prefix: /
 
-3 - security 
+config
+lib_kc_finder:
+    upload_url: "/uploads/images_articles"
+    upload_dir: "%kernel.root_dir%/../web/uploads/images_articles"
 
-4 - use
+security 
+security:
+    access_control:
+        - { path: ^/kcfinder*, role: ADMIN }

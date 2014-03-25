@@ -16,6 +16,25 @@
 // you are using session configuration.
 // See http://kcfinder.sunhater.com/install for setting descriptions
 
+$base =  __DIR__ . '/../../../../../../';
+require_once $base.'app/autoload.php';
+use Symfony\Component\Yaml\Parser;
+
+$yaml = new Parser();
+$config = $yaml->parse(file_get_contents($base.'/app/config/config.yml'));
+
+$upload_dir = __DIR__ . '/../../../../../../web/upload'; // in web
+$upload_url = "http://{$_SERVER['HTTP_HOST']}/upload";
+
+if (key_exists('lib_kc_finder', $config)){
+    if (key_exists('upload_url', $config['lib_kc_finder'])){
+        $upload_dir = __DIR__ . '/../../../../../../'.$config['lib_kc_finder']['upload_dir'];
+    }
+    if (key_exists('upload_dir', $config['lib_kc_finder'])){
+        $upload_url = $config['lib_kc_finder']['upload_url'];
+    }
+}
+
 $_CONFIG = array(
 
     'disabled' => false,
@@ -25,8 +44,8 @@ $_CONFIG = array(
     'language' => 'fr',
     'theme' => "oxygen",
 
-    'uploadURL' => "http://{$_SERVER['HTTP_HOST']}/upload", // Should point to /web/upload
-    'uploadDir' => __DIR__ . '/../../../../../../web/upload',
+    'uploadURL' => $upload_url,
+    'uploadDir' =>  $upload_dir,
 
     'dirPerms' => 0775,
     'filePerms' => 0664,
