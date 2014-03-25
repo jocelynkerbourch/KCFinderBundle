@@ -23,4 +23,4 @@ lib_kc_finder:
 security 
 security:
     access_control:
-        - { path: ^/kcfinder*, role: ADMIN }
+        - { path: ^/admin/kcfinder*, role: ADMIN }
