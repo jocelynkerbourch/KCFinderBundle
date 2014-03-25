@@ -30,7 +30,7 @@ class ProxyController extends Controller
 	
 	public function js_browser_joinerAction()
 	{
-		return $this->proxyForward('js/browser/joiner.php');
+		return $this->proxyForward('joiner.php');
 	}
 	
 	private function proxyForward($file)

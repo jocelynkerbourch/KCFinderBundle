@@ -19,7 +19,8 @@ if (!file_exists('lib/helper_httpCache.php'))
 
 require "lib/helper_httpCache.php";
 require "lib/helper_dir.php";
-$files = dir::content("js/browser", array(
+$path = __DIR__. '/../Resources/public/js/browser';
+$files = dir::content(realpath($path), array(
     'types' => "file",
     'pattern' => '/^.*\.js$/'
 ));
