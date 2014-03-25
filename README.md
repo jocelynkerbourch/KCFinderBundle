@@ -13,7 +13,7 @@ new lib\KCFinderBundle\libKCFinderBundle(),
 routing
 lib_kcfinder: 
     resource: "@libKCFinderBundle/Resources/config/routing.yml" 
-    prefix: /
+    prefix: /admin
 
 config
 lib_kc_finder:
