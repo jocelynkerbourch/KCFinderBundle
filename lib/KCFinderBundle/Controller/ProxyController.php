@@ -15,7 +15,7 @@ class ProxyController extends Controller
 
 	public function cssAction()
 	{
-		return $this->proxyForward('css.php');
+		return $this->proxyForward('css/index.php');
 	}
 
 	public function js_localizeAction()
@@ -30,7 +30,28 @@ class ProxyController extends Controller
 	
 	public function js_browser_joinerAction()
 	{
-		return $this->proxyForward('joiner.php');
+		return $this->proxyForward('js/index.php');
+	}
+	
+	public function themesAction($theme, $file)
+	{
+		return $this->proxyForward('themes/'.$theme.'/'.$file.'.php');
+	}
+	
+	public function imgAction($theme, $file)
+	{
+            $file = __DIR__."/../kcfinder/themes/".$theme."/img/".$file;
+            $response = new Response();
+            if(file_exists($file))
+            {
+                echo file_get_contents($file);
+                $parts = explode(".", $file);
+                $mimetype = "image/".$parts[count($parts)-1];
+                $response->headers->set("Content-Type", $mimetype);
+            }else{
+                $response = new Response('Page not found.', Response::HTTP_NOT_FOUND);
+            }
+            return $response;
 	}
 	
 	private function proxyForward($file)

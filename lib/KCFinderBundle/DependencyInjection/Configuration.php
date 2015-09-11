@@ -28,6 +28,8 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('upload_dir')
                     ->cannotBeEmpty()
                 ->end()
+                ->scalarNode('theme')
+                ->end()
             ->end()
         ;
 
