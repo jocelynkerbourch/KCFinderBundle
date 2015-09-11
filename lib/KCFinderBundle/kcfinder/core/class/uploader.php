@@ -148,6 +148,7 @@ class uploader {
         } else
             $this->session = &$_SESSION;
 
+        /*
         // SECURING THE SESSION
         $stamp = array(
             'ip' => $_SERVER['REMOTE_ADDR'],
@@ -159,7 +160,7 @@ class uploader {
             if ($this->session['stamp']['ip'] === $stamp['ip'])
                 session_destroy();
             die;
-        }
+        }*/
 
         // IMAGE DRIVER INIT
         if (isset($this->config['imageDriversPriority'])) {
